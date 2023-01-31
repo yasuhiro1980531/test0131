@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\HomeworkRequest;
 
 class HomeworkController extends Controller
 {
@@ -11,8 +12,9 @@ class HomeworkController extends Controller
         return view('index');
     }
 
-    public function thanks()
+    public function thanks(HomeworkRequest $request)
     {
-        return view('thanks');
+        $forms = $request->all();
+        return view('thanks',['forms' => $forms]);
     }
 }

@@ -8,11 +8,18 @@
 </head>
 <body>
   氏名<br>
+  @error('name')
+  <p>{{$message}}</p>
+  @enderror
   <input type="text" method="post" name="name"><br>
   メールアドレス<br>
+  @error('email')
+  <p>{{$message}}</p>
+  @enderror
   <input type="email" method="post" name="email"><br>
   <form action="/thanks" method="post">
     @csrf
   <input type="submit" value="送信する">
+</form>
 </body>
 </html>

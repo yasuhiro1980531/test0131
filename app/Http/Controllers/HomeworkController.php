@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\HomeworkRequest;
+use App\Models\Homework;
 
 class HomeworkController extends Controller
 {
@@ -14,7 +15,10 @@ class HomeworkController extends Controller
 
     public function thanks(HomeworkRequest $request)
     {
-        $forms = $request->all();
-        return view('thanks',['forms' => $forms]);
+        $contact = new Homework();
+        $contact->name = $request->name;
+        $contact->email = $request->email;
+        $contact->save();
+        return redirect('/thanks');
     }
 }

@@ -11,14 +11,14 @@
   @error('name')
   <p>{{$message}}</p>
   @enderror
+  <form action="/thanks" method="post">
+    @csrf
   <input type="text" method="post" name="name"><br>
   メールアドレス<br>
   @error('email')
   <p>{{$message}}</p>
   @enderror
-  <input type="email" method="post" name="email"><br>
-  <form action="/thanks" method="post">
-    @csrf
+  <input type="email" method="post" name="email" value=""><br>
   <input type="submit" value="送信する">
 </form>
 </body>

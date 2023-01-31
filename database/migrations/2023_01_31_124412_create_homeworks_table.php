@@ -15,8 +15,8 @@ class CreateHomeworksTable extends Migration
     {
         Schema::create('homeworks', function (Blueprint $table) {
             $table->id();
-            $table->string('name',20);
-            $table->string('email',100);
+            $table->string('name');
+            $table->string('email');
             $table->timestamps();
         });
     }

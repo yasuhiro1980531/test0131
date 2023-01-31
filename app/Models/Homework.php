@@ -9,5 +9,5 @@ class Homework extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'email'];
+    protected $regarded= ['id'];
 }

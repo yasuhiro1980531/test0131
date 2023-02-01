@@ -13,12 +13,18 @@ class HomeworkController extends Controller
         return view('index');
     }
 
-    public function thanks(HomeworkRequest $request)
+    public function create(HomeworkRequest $request)
     {
         Contact::create([
             'name' => $request->name,
             'email' => $request->email
         ]);
-        return redirect('/thanks');
+        
     }
+
+    public function thanks()
+    {
+        return view('thanks');
+    }
+        
 }

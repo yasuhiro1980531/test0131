@@ -14,4 +14,5 @@ use App\Http\Controllers\HomeworkController;
 */
 
 Route::get('/', [HomeworkController::class,'index']);
-Route::post('/thanks',[HomeworkController::class,'thanks']);
+Route::post('/thanks',[HomeworkController::class,'create']);
+Route::get('/thanks',[HomeworkController::class,'thanks']);
